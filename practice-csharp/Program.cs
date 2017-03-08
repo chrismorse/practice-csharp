@@ -10,7 +10,16 @@ namespace practice_csharp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello world");
+            
+            
+            strings.RunAllTests();
+
+
+
+            Console.WriteLine();
+            Console.WriteLine("-------------------------------");
+            Console.WriteLine("Finished");
+            Console.WriteLine("-------------------------------");
             Console.ReadLine();
         }
     }
