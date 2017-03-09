@@ -36,7 +36,7 @@ namespace practice_csharp
 
             while (low <= high)
             {
-                mid = (int)Math.Ceiling(((double)high + (double)low) / 2);
+                mid = (high + low) / 2;
 
                 if (target > sortedInput[mid])
                 {
@@ -55,6 +55,14 @@ namespace practice_csharp
             return -1;
 
         }
+
+
+        static int BinarySearch_Recursive(int[] sortedInput, int target, int low, int high)
+        {
+            //int mid = 
+            return -1;
+        }
+
 
     }
 }
