@@ -22,6 +22,15 @@ namespace practice_csharp
             Debug.Assert(BinarySearch(sortedInput, 15) == 10);
             Debug.Assert(BinarySearch(sortedInput, 22) == -1);
 
+            Debug.Assert(BinarySearch_Recursive(sortedInput, -1, 0, sortedInput.Length - 1) == -1);
+            Debug.Assert(BinarySearch_Recursive(sortedInput, 0, 0, sortedInput.Length - 1) == 0);
+            Debug.Assert(BinarySearch_Recursive(sortedInput, 1, 0, sortedInput.Length - 1) == 1);
+            Debug.Assert(BinarySearch_Recursive(sortedInput, 2, 0, sortedInput.Length - 1) == 2);
+            Debug.Assert(BinarySearch_Recursive(sortedInput, 11, 0, sortedInput.Length - 1) == 9);
+            Debug.Assert(BinarySearch_Recursive(sortedInput, 15, 0, sortedInput.Length - 1) == 10);
+            Debug.Assert(BinarySearch_Recursive(sortedInput, 22, 0, sortedInput.Length - 1) == -1);
+
+            
             Console.WriteLine("binary search done");
 
         }
@@ -59,8 +68,31 @@ namespace practice_csharp
 
         static int BinarySearch_Recursive(int[] sortedInput, int target, int low, int high)
         {
-            //int mid = 
-            return -1;
+
+            int mid = (high + low) / 2;
+
+
+            if (low <= high)
+            {
+                if (target > sortedInput[mid])
+                {
+                    low = mid + 1;
+                    return BinarySearch_Recursive(sortedInput, target, low, high);
+                }
+                else if (target < sortedInput[mid])
+                {
+                    high = mid - 1;
+                    return BinarySearch_Recursive(sortedInput, target, low, high);
+                }
+                else
+                {
+                    return mid;
+                }
+            }
+            else
+            {
+                return -1;
+            }
         }
 
 
