@@ -13,14 +13,16 @@ namespace practice_csharp
             
             
             strings.RunAllTests();
+            binary_search.RunAllTests();
+
+
 
 
 
             Console.WriteLine();
             Console.WriteLine("-------------------------------");
-            Console.WriteLine("Finished");
-            Console.WriteLine("-------------------------------");
-            Console.ReadLine();
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
         }
     }
 }

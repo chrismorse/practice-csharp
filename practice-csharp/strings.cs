@@ -26,6 +26,9 @@ namespace practice_csharp
             reversedString = ReverseString_Recursive(testString);
             Debug.Assert(reversedString == reversedTestString, "String is not reversed");
 
+
+            Console.WriteLine("strings done");
+
         }
         
         static string ReverseString(string input)
@@ -68,6 +71,9 @@ namespace practice_csharp
                 return ReverseString_Recursive(input.Substring(1)) + input[0];
             }
         }
+
+        
+
 
     }
 }
