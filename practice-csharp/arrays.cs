@@ -19,6 +19,8 @@ namespace practice_csharp
             MultiDimensionalArray();
 
             ArrayResize();
+
+            ImplicitlyTypedArrays();
         }
 
         static void Arrays()
@@ -86,13 +88,23 @@ namespace practice_csharp
         {
             int[] nums = {1,2,3,4,5};
 
-            //could create a temp, walk through all and copy... OR
+            //could also create a temp, walk through all and copy... OR
             Array.Resize(ref nums, 6);
             nums[5] = 6;
+        }
+
+
+        static void ImplicitlyTypedArrays()
+        {
+            var myInstance = new { firstName = "Chris", lastName = "Morse" };
+            var yourInstance = new { firstName = "Hiring", lastName = "Manager" };
+
+            var myArray = new[] { myInstance, yourInstance };
+
+            var myArray2 = new[] { 1, 2, 'a', 3, 4 };   //what type will this be??   (BTW - string won't compile)
 
 
         }
-
 
 
     }
