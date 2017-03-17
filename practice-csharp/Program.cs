@@ -18,7 +18,7 @@ namespace practice_csharp
             arrays.RunAllTests();
             sample_problems.RunAllTests();
             linked_lists.RunAllTests();
-
+            generics.RunAllTests();
 
 
             Console.WriteLine();
