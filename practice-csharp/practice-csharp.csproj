@@ -46,6 +46,7 @@
     <Compile Include="linear-search.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sample-problems.cs" />
     <Compile Include="strings.cs" />
   </ItemGroup>
   <ItemGroup>
