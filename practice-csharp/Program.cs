@@ -17,6 +17,7 @@ namespace practice_csharp
             linear_search.RunAllTests();
             arrays.RunAllTests();
             sample_problems.RunAllTests();
+            linked_lists.RunAllTests();
 
 
 
