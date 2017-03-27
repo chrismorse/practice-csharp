@@ -18,6 +18,9 @@ namespace practice_csharp
             helper.Print(result);
             helper.Print(result2);
 
+            Console.WriteLine("-------------------------------");
+
+
         
         }
 

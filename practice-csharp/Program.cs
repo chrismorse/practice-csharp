@@ -19,6 +19,10 @@ namespace practice_csharp
             sample_problems.RunAllTests();
             linked_lists.RunAllTests();
             generics.RunAllTests();
+            polymorphism.RunAllTests();
+            abstract_classes.RunAllTests();
+
+
 
 
             Console.WriteLine();
