@@ -45,6 +45,7 @@
     <Compile Include="arrays.cs" />
     <Compile Include="binary-search.cs" />
     <Compile Include="generics.cs" />
+    <Compile Include="hashing.cs" />
     <Compile Include="linear-search.cs" />
     <Compile Include="linked-lists.cs" />
     <Compile Include="polymorphism.cs" />

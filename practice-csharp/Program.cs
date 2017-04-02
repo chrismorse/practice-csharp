@@ -21,6 +21,7 @@ namespace practice_csharp
             generics.RunAllTests();
             polymorphism.RunAllTests();
             abstract_classes.RunAllTests();
+            hashing.RunAllTests();
 
 
 
