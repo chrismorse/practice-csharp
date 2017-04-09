@@ -6,30 +6,30 @@ using System.Threading.Tasks;
 
 namespace practice_csharp
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            
-            
-            strings.RunAllTests();
-            binary_search.RunAllTests();
-            linear_search.RunAllTests();
-            arrays.RunAllTests();
-            sample_problems.RunAllTests();
-            linked_lists.RunAllTests();
-            generics.RunAllTests();
-            polymorphism.RunAllTests();
-            abstract_classes.RunAllTests();
-            hashing.RunAllTests();
+	class Program
+	{
+		static void Main(string[] args)
+		{
+
+
+			strings.RunAllTests();
+			binary_search.RunAllTests();
+			linear_search.RunAllTests();
+			arrays.RunAllTests();
+			sample_problems.RunAllTests();
+			generics.RunAllTests();
+			polymorphism.RunAllTests();
+			abstract_classes.RunAllTests();
+			hashing.RunAllTests();
+			linked_lists.RunAllTests();
 
 
 
 
-            Console.WriteLine();
-            Console.WriteLine("-------------------------------");
-            Console.WriteLine("Press any key to exit.");
-            Console.ReadKey();
-        }
-    }
+			Console.WriteLine();
+			Console.WriteLine("-------------------------------");
+			Console.WriteLine("Press any key to exit.");
+			Console.ReadKey();
+		}
+	}
 }

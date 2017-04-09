@@ -6,146 +6,143 @@ using System.Threading.Tasks;
 
 namespace practice_csharp
 {
-    class linked_lists
-    {
-        class Node
-        {
-            public int data;
-            public Node next;
+	class linked_lists
+	{
+		class Node
+		{
+			public int data;
+			public Node next;
 
-            // constructor
-            public Node(int i)
-            {
-                data = i;
-                next = null;
-            }
+			// constructor
+			public Node(int i)
+			{
+				data = i;
+				next = null;
+			}
 
-            public void Print()
-            {
-                Console.Write("| " + data + " | ->  ");
-                if (next != null)
-                    next.Print();
-                Console.WriteLine();
-            }
+			public void Print()
+			{
+				Console.Write("| " + data + " | ->  ");
+			}
 
-            public void AddToEnd(int i)
-            {
-                if (next != null)
-                    next.AddToEnd(i);
-                else
-                    next = new Node(i);
-            }
+		}
 
-            public void AddSorted(int i)
-            {
-                if (next == null)
-                {
-                    next = new Node(i);
-                }
-                else if (i < next.data)
-                {
-                    Node temp = new Node(i);
-                    temp.next = this.next;
-                    this.next = temp;
-                }
-                else
-                {
-                    next.AddSorted(i);
-                }
+		class LinkedList
+		{
+			private Node _headNode;
+			private Node _tailNode;
 
-            
-            }
+			public LinkedList()
+			{
+				_headNode = null;
+				_tailNode = null;
+			}
 
+			public void AddToEnd(int data)
+			{
+				if (_headNode == null)
+				{
+					_headNode = new Node(data);
+					_tailNode = _headNode;
+				}
+				else
+				{
+					Node newNode = new Node(data);
+					_tailNode.next = newNode;
+					_tailNode = newNode;
+				}
+			}
 
-        }
+			public void AddToBeginning(int data)
+			{
+				if (_headNode == null)
+				{
+					_headNode = new Node(data);
+					_tailNode = _headNode;
+				}
+				else
+				{
+					Node newNode = new Node(data);
+					newNode.next = _headNode;
+					_headNode = newNode;
+				}
 
-        class MyList
-        {
-            public Node headNode;
-
-            public MyList()
-            {
-                headNode = null;
-            }
-
-            public void AddToEnd(int data) {
-                if (headNode == null)
-                {
-                    headNode = new Node(data);
-                } 
-                else 
-                {
-                    headNode.AddToEnd(data);
-                }
-            }
-
-            public void AddToBeginning(int data)
-            {
-                if (headNode == null)
-                {
-                    headNode = new Node(data);
-                }
-                else
-                {
-                    Node tempNode = new Node(data);
-                    tempNode.next = headNode;
-                    headNode = tempNode;
-
-                }
-
-            }
-
-            public void AddSorted(int data)
-            {
-                if (headNode == null)
-                {
-                    headNode = new Node(data);
-                }
-                else if (data < headNode.data)
-                {
-                    AddToBeginning(data);
-                }
-                else
-                {
-                    headNode.AddSorted(data);
-                }
-            }
-            
-            public void Print() {
-                if (headNode != null)
-                    headNode.Print();
-            }
-
-        }
+			}
 
 
-        public static void RunAllTests() {
-            Console.WriteLine();
-
-/*            
-            MyList myList = new MyList();
-            myList.AddToBeginning(6);
-            myList.AddToEnd(7);
-            myList.AddToEnd(5);
-            myList.AddToEnd(11);
-            myList.AddToEnd(4);
-            myList.AddToBeginning(3);
-            myList.Print();
-  
-*/
-
-            MyList myList = new MyList();
-            myList.AddSorted(3);
-            myList.AddSorted(1);
-            myList.AddSorted(4);
-            myList.AddSorted(5);
-            myList.AddSorted(6);
-            myList.AddSorted(0);
-            myList.AddSorted(1);
-            myList.Print();
 
 
-        }
+			public void Print() {
+				Node iteratorNode = _headNode;
+
+				while(iteratorNode != null) {
+					iteratorNode.Print();
+					iteratorNode = iteratorNode.next;
+				}
+				Console.WriteLine();
+			}
+
+			public void AddSorted(int data) {
+				// if empty list then insert at beginning.
+				if (_headNode == null)
+				{
+					AddToBeginning(data);
+				}
+				else
+				{
+					
+					Node current = _headNode;
+
+					// Check and see if it needs to go at the beginning
+					if (current.data >= data)
+					{
+						AddToBeginning(data);
+					}
+					else
+					{
+						// walk through list and find where to insert
+						while (current.next != null && data >= current.next.data)
+							current = current.next;
+
+						Node newNode = new Node(data);
+						newNode.next = current.next;
+						current.next = newNode;
+
+						if (current == _tailNode)
+							_tailNode = newNode;
+
+					}
+
+				}
+
+
+
+
+			}
+
+
+		}
+
+
+		public static void RunAllTests()
+		{
+			Console.WriteLine();
+
+
+			LinkedList myList = new LinkedList();
+			myList.AddToEnd(1);
+			myList.AddToBeginning(2);
+			myList.Print();
+
+			LinkedList myList2 = new LinkedList();
+			myList2.AddSorted(3);
+			myList2.AddSorted(2);
+			myList2.AddSorted(1);
+			myList2.AddSorted(4);
+			myList2.Print();
+
+
+		}
 
 
 
@@ -154,7 +151,7 @@ namespace practice_csharp
 
 
 
-    }
+	}
 
 
 
