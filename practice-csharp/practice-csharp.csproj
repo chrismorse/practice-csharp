@@ -49,6 +49,7 @@
     <Compile Include="linear-search.cs" />
     <Compile Include="linked-lists.cs" />
     <Compile Include="polymorphism.cs" />
+    <Compile Include="practice-problems.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sample-problems.cs" />
